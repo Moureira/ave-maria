@@ -1,0 +1,78 @@
+:root {
+    --cor-primaria: #6a1b9a; /* Roxo para tema religioso */
+    --cor-secundaria: #9575cd; /* Roxo claro */
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.hero-banner {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../assets/imagens/banner_virgem_maria.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+}
+
+.nav-transparente {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+ 
+}
+
+.card-hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.img-arredondada {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid var(--cor-secundaria);
+}
+
+.section-title {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.formata-texto {
+    text-align: justify;
+}
