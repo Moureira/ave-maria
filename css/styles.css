@@ -1,78 +1,200 @@
+/* Definição de variáveis de cor para o tema */
 :root {
     --cor-primaria: #6a1b9a; /* Roxo para tema religioso */
     --cor-secundaria: #9575cd; /* Roxo claro */
 }
 
-
+/* Estilos gerais do corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Define a fonte padrão */
+    display: flex;
+    flex-direction: column; /* Organiza o layout em coluna */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    margin: 0; /* Remove margens padrão */
 }
 
+/* Remove margens do html e body */
+html, body {
+    margin: 0;
+}
+
+/* Estilos para o banner hero */
 .hero-banner {
-    height: 70vh;
+    height: 70vh; /* Altura do banner */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('../assets/imagens/banner_virgem_maria.jpg') center/cover no-repeat;
+                url('../assets/imagens/banner_virgem_maria.jpg') center/cover no-repeat; /* Gradiente e imagem de fundo */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    
+    color: white; /* Cor do texto */
+    padding-top: 80px; /* Compensa a altura do nav */
 }
 
+/* Estilos para o menu de navegação */
 .nav-transparente {
-    background: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
- 
+    background: rgba(255, 255, 255, 0.9) !important; /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background 0.3s, box-shadow 0.3s; /* Transição suave */
 }
 
+/* Estilos para a marca do menu (logo) */
+.navbar-brand {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    color: var(--cor-primaria) !important; /* Cor primária */
+    transition: color 0.3s; /* Transição suave para a cor */
+}
+
+/* Efeito de hover na marca do menu */
+.navbar-brand:hover {
+    color: var(--cor-secundaria) !important; /* Cor secundária ao passar o mouse */
+}
+
+/* Estilos para o botão do menu (toggler) */
+.navbar-toggler {
+    border: none; /* Remove borda */
+    outline: none; /* Remove contorno */
+}
+
+/* Estilos para o ícone do botão do menu */
+.navbar-toggler-icon {
+    background-image: none; /* Remove o ícone padrão */
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: var(--cor-primaria); /* Cor primária */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+/* Linhas superior e inferior do ícone do menu */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--cor-primaria); /* Cor primária */
+    transition: transform 0.3s; /* Transição suave */
+}
+
+/* Posiciona a linha superior */
+.navbar-toggler-icon::before {
+    transform: translateY(-6px);
+}
+
+/* Posiciona a linha inferior */
+.navbar-toggler-icon::after {
+    transform: translateY(6px);
+}
+
+/* Estilos quando o menu está expandido */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent; /* Remove a linha central */
+}
+
+/* Transforma a linha superior em um "X" */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+/* Transforma a linha inferior em um "X" */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+}
+
+/* Estilos para os links do menu */
+.nav-link {
+    color: var(--cor-primaria) !important; /* Cor primária */
+    font-weight: 500; /* Peso da fonte */
+    position: relative;
+    transition: color 0.3s; /* Transição suave */
+}
+
+/* Linha inferior dos links do menu */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-secundaria); /* Cor secundária */
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s; /* Transição suave */
+}
+
+/* Efeito de hover nos links do menu */
+.nav-link:hover {
+    color: var(--cor-secundaria) !important; /* Cor secundária ao passar o mouse */
+}
+
+/* Expande a linha inferior ao passar o mouse */
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Estilos para cards com efeito de hover */
 .card-hover {
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.card-hover:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+    border: none; /* Remove borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa o card */
 }
 
+/* Efeito de hover nos cards */
+.card-hover:hover {
+    transform: translateY(-10px); /* Move o card para cima */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+/* Estilos para imagens arredondadas */
 .img-arredondada {
-    border-radius: 50%;
+    border-radius: 50%; /* Bordas arredondadas */
     width: 200px;
     height: 200px;
-    object-fit: cover;
-    border: 5px solid var(--cor-secundaria);
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+    border: 5px solid var(--cor-secundaria); /* Borda com cor secundária */
 }
 
+/* Estilos para títulos de seção */
 .section-title {
-    color: var(--cor-primaria);
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: var(--cor-primaria); /* Cor primária */
+    font-weight: bold; /* Fonte em negrito */
+    margin-bottom: 2rem; /* Margem inferior */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre letras */
 }
 
+/* Estilos para o rodapé */
 .footer {
-    background-color: var(--cor-primaria);
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-    flex-shrink: 0;
+    background-color: var(--cor-primaria); /* Cor primária */
+    color: white; /* Cor do texto */
+    padding: 2rem 0; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    flex-shrink: 0; /* Garante que o rodapé não encolha */
+    margin-top: auto; /* Empurra o rodapé para o final */
 }
 
+/* Estilos para botões primários */
 .btn-primary {
-    background-color: var(--cor-primaria);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
-}
-.btn-primary:hover {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-primaria); /* Cor primária */
+    border: none; /* Remove borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Transição suave */
 }
 
+/* Efeito de hover nos botões primários */
+.btn-primary:hover {
+    background-color: var(--cor-secundaria); /* Cor secundária ao passar o mouse */
+}
+
+/* Estilos para texto justificado */
 .formata-texto {
-    text-align: justify;
+    text-align: justify; /* Alinhamento justificado */
+}
+
+/* Garante que o conteúdo principal ocupe o espaço restante */
+main {
+    flex: 1;
 }
