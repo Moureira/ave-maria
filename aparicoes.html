@@ -10,66 +10,59 @@
 
     <!-- Arquivo CSS local -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bandeiras.css">
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light nav-transparente fixed-top py-3  fw-bold">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: var(--cor-primaria)">
-                <i class="fas fa-pray"></i> Virgem Maria
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#oracoes">Orações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="menu-placeholder"></div> <!-- Chama o menu.html-->
+
     <!-- Aparições -->
     <section id="aparições" class="py-5">
-        <div class="container py-5">
-            <h2 class="section-title text-center">Aparições de Nossa Senhora</h2>
+        <div class="container py-5"></div>
 
-            <!-- Seção de Países -->
-            <section id="paises" class="py-5">
-                <div class="container py-5">
-                    <h2 class="section-title text-center">Paises</h2>
+            <!-- Seção de Bandeiras -->
+            <section id="bandeiras" class="py-5">
+                <div class="container">
+                    <h2 class="section-title text-center">Aparições de nossa Senhora ao redor do mundo</h2>
                     <br>
-                    <br>
-                    <br>
-                    <br>
+                    <div class="flag-container">
+                        <!-- Bandeira da Bósnia -->
+                        <div class="flag-card">
+                            <a href="bosnia.html">
+                                <img src="https://flagcdn.com/w320/ba.png" alt="Bandeira da Bósnia">
+                                <p>Bósnia</p>
+                            </a>
+                        </div>
 
-                    <div class="row text-center">
-                        <div class="col-md-3 mb-4">
-                            <a href="paises/portugal.html" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-flag"></i> Portugal
+                        <!-- Bandeira da França -->
+                        <div class="flag-card">
+                            <a href="franca.html">
+                                <img src="https://flagcdn.com/w320/fr.png" alt="Bandeira da França">
+                                <p>França</p>
                             </a>
                         </div>
-                        <div class="col-md-3 mb-4">
-                            <a href="paises/franca.html" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-flag"></i> França
+
+                        <!-- Bandeira do México -->
+                        <div class="flag-card">
+                            <a href="mexico.html">
+                                <img src="https://flagcdn.com/w320/mx.png" alt="Bandeira do México">
+                                <p>México</p>
                             </a>
                         </div>
-                        <div class="col-md-3 mb-4">
-                            <a href="paises/mexico.html" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-flag"></i> México
-                            </a>
-                        </div>
-                        <div class="col-md-3 mb-4">
-                            <a href="paises/bosnia.html" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-flag"></i> Bósnia
+
+                         <!-- Bandeira de Portugal -->
+                         <div class="flag-card">
+                            <a href="portugal.html">
+                                <img src="https://flagcdn.com/w320/pt.png" alt="Bandeira de Portugal">
+                                <p>Portugal</p>
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
+        </div>
     </section>
 
     <!-- Rodapé -->
